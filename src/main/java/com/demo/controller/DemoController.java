@@ -12,6 +12,7 @@ public class DemoController {
     @GetMapping("/get")
     public Student student() {
         Student student = new Student();
+        student.setAge(100);
         return student;
     }
 }
