@@ -15,6 +15,8 @@
 
     <properties>
         <native-maven-plugin.version>0.9.28</native-maven-plugin.version>
+        <!-- Spring Boot -->
+        <spring-boot.version>3.3.4</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -47,8 +49,22 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>process-aot</id>
+                        <goals>
+                            <goal>process-aot</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <skip>false</skip>
+                    <mainClass>${start-class}</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -56,7 +72,6 @@
                 <artifactId>native-maven-plugin</artifactId>
                 <version>${native-maven-plugin.version}</version>
                 <configuration>
-                    <skip>true</skip>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                     <metadataRepository>
                         <enabled>true</enabled>
