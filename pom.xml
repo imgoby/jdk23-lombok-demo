@@ -35,6 +35,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.wildfly.common</groupId>
+                    <artifactId>wildfly-common</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- jdk23+native-image编译错,更新版本-->
