@@ -73,39 +73,6 @@
                 <version>${native-maven-plugin.version}</version>
                 <configuration>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-                    <metadataRepository>
-                        <enabled>true</enabled>
-                        <!--                                <url>https://github.com/oracle/graalvm-reachability-metadata/releases/download/0.3.5/graalvm-reachability-metadata-0.3.5.zip</url>-->
-                        <!--                                <version>0.3.5</version>-->
-                    </metadataRepository>
-                    <requiredVersion>22.3</requiredVersion>
-                    <!-- native-image下不支持UCS2编码 -H:+AddAllCharsets -->
-                    <buildArgs>
-                        -H:+AddAllCharsets  -H:+ReportExceptionStackTraces --add-modules=jdk.incubator.foreign --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.math=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED  --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.sql/java.sql=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.desktop/java.awt=ALL-UNNAMED
-                        --initialize-at-build-time=org.apache.commons.logging.LogFactory
-                        --initialize-at-build-time=org.apache.commons.logging.LogFactoryService
-                        --initialize-at-build-time=org.apache.logging.log4j.util.Constants
-                        --initialize-at-build-time=org.apache.commons.logging.impl.Jdk14Logger
-                        --initialize-at-build-time=org.apache.logging.log4j.simple.SimpleLogger
-                        --initialize-at-build-time=ch.qos.logback.classic.Logger
-                        --initialize-at-build-time=org.apache.logging.log4j.status.StatusLogger
-                        --initialize-at-build-time=org.apache.logging.log4j.util.PropertiesUtil
-                        --initialize-at-build-time=org.apache.logging.log4j.util.PropertySource$Util
-                        --initialize-at-build-time=ch.qos.logback.core.status.InfoStatus
-                        --initialize-at-build-time=org.apache.logging.log4j.spi.StandardLevel
-                        --initialize-at-build-time=org.apache.logging.log4j.util.Strings
-                        --initialize-at-build-time=org.apache.logging.log4j.spi.AbstractLogger
-                        --initialize-at-build-time=ch.qos.logback.core.status.StatusBase
-                        --initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter
-                        --initialize-at-build-time=org.apache.logging.log4j.spi.Provider
-                        --initialize-at-build-time=org.apache.logging.log4j.Level
-                        --initialize-at-build-time=org.slf4j.MarkerFactory
-                        --initialize-at-build-time=ch.qos.logback.core.util.Loader
-                        --initialize-at-build-time=org.apache.logging.log4j.util.LoaderUtil
-                        --initialize-at-build-time=ch.qos.logback.classic.Level
-                        --initialize-at-build-time=org.slf4j.LoggerFactory
-                        -H:+AllowDeprecatedBuilderClassesOnImageClasspath
-                    </buildArgs>
                 </configuration>
                 <executions>
                     <execution>
