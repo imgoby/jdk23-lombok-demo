@@ -17,6 +17,8 @@
         <native-maven-plugin.version>0.9.28</native-maven-plugin.version>
         <!-- Spring Boot -->
         <spring-boot.version>3.3.4</spring-boot.version>
+        <!-- resolve lombok+jdk23 issue -->
+        <maven.compiler.proc>full</maven.compiler.proc>
     </properties>
 
     <dependencies>
